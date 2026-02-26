@@ -90,14 +90,16 @@
         <button onclick="goToStepById('bergerak')">cara bergerak bebek</button>
         <button onclick="goToStepById('pertumbuhan')">pertumbuhan bebek</button>
         <button onclick="goToStepById('perkembang')">perkembangan bebek</button>
-        <button onclick="goToStepById('soal')">soal bebek</button>
+        <button onclick="goToStepById('makanan')">makanan bebek</button>
+        <button onclick="goToStepById('soal')">pertanyaan bebek</button>
         <button class="prev-btn">◀ kembali</button>
       </section>
       <!-- Bagian tubuh hewan -->
       <section id="tubuh" class="info-step">
         <h3> bagian tubuh bebek</h3>
         <div class="ciri-ciri">
-          <img src="Paruh Bebek.jpeg" alt="paruh bebek" onclick="playAudio('audioParuhjpg')" class="klik-audio">
+          <img src="Paruh Bebek.jpeg" alt="paruh bebek" 
+          onclick="playAudio('audioParuhjpg')" class="klik-audio">
           <audio id="audioParuhjpg" src="ini paruh bebek.mp3"></audio>
           <span onclick="playAudio('audioParuh')" class="teks-audio">
             paruh bebek untuk makan
@@ -340,14 +342,10 @@
       <!--video pertumbuhan bebek-->
       <section id="bebekdewasa" class="info-step">
         <h3>video pertumbuhan anak bebek sampai bebek dewasa</h3>
-         <iframe 
-    width="100%" 
-    height="315"
-    src="https://www.youtube.com/embed/FNxJGzbfk3c"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/FNxJGzbfk3c" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
 
         <p class="source">
           sumber video:
@@ -358,7 +356,7 @@
         </div>
       </section>
       <!-- makanan hewan -->
-      <section class="info-step">
+      <section id="makanan" class="info-step">
         <h3>makanan bebek</h3>
 
         <div class="ciri-ciri">
@@ -368,15 +366,16 @@
           <span onclick="playAudio('audioPadi')" class="teks-audio">
             bebek makan padi
           </span>
-          <audio id="audioPadi" src="padi.mp3"></audio>
+          <audio id="audioPadi" src="bebek makan padi.mp3"></audio>
         </div>
 
         <div class="ciri-ciri">
-          <img src="https://e7.pngegg.com/pngimages/117/966/png-clipart-worms-worms.png" alt="cacing">
+          <img src="https://e7.pngegg.com/pngimages/117/966/png-clipart-worms-worms.png" 
+          alt="cacing">
           <span onclick="playAudio('audioCacing')" class="teks-audio">
             bebek makan cacing
           </span>
-          <audio id="audioCacing" src="cacing.mp3"></audio>
+          <audio id="audioCacing" src="bebek makan cacing.mp3"></audio>
         </div>
 
         <div class="ciri-ciri">
@@ -386,15 +385,17 @@
           <span onclick="playAudio('audioSerangga')" class="teks-audio">
             bebek makan serangga kecil
           </span>
-          <audio id="audioSerangga" src="serangga.mp3"></audio>
+          <audio id="audioSerangga" src="bebek makan serangga.mp3"></audio>
         </div>
 
         <div class="ciri-ciri">
-          <img src="https://medialampung.disway.id/upload/0387648881d7b82e8b7bde578b51223c.jpg" alt="keong">
+          <img src="https://medialampung.disway.id/upload/0387648881d7b82e8b7bde578b51223c.jpg" 
+          alt="keong" onclick="playAudio('audioKeongjpg')" class="teks-audio">
+          <audio id="audioKeongjpg" src="ini keong.mp3"></audio>
           <span onclick="playAudio('audioKeong')" class="teks-audio">
-            Bebek makan keong.
+            bebek makan keong
           </span>
-          <audio id="audioKeong" src="keong.mp3"></audio>
+          <audio id="audioKeong" src="bebek makan keong.mp3"></audio>
         </div>
 
         <div class="nav-btn">
@@ -454,12 +455,10 @@
       <!--video perkembang biak hewan-->
       <section class="info-step">
         <h3>video perkembang biak bebek</h3>
-        <iframe width="100%" height="315"
-    src="https://www.youtube.com/embed/aZ4N9D1q0Ls"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/aZ4N9D1q0Ls" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
         <p class="source">
           sumber video:
           <a href="https://vt.tiktok.com/ZSmJxvFxE/" target="_blank">tiktok</a>
@@ -478,7 +477,9 @@
         <button onclick="jawaban('benar')">
           <img src="https://pngimg.com/uploads/duck/duck_PNG5029.png" alt="bebek">bebek</button>
         <button onclick="jawaban('salah')">
-          <img src="https://cdn.pixabay.com/photo/2018/05/18/04/29/fish-3410329_1280.png" alt="ikan">ikan</button>
+          <img
+            src="https://static.vecteezy.com/system/resources/thumbnails/042/236/023/small_2x/ai-generated-tropical-fish-isolated-on-transparent-background-png.png"
+            alt="ikan">ikan</button>
 
         <p id="feedback-makanan" class="feedback"></p>
 
@@ -526,7 +527,9 @@
         <button onclick="jawaban('benar', 'feedback-tempat')">
           <img src="https://pngimg.com/uploads/duck/duck_PNG5029.png" alt="">bebek</button>
         <button onclick="jawaban('salah', 'feedback-tempat')">
-          <img src="Ikan Badut.jpeg" alt="">ikan</button>
+          <img
+            src="https://static.vecteezy.com/system/resources/thumbnails/042/236/023/small_2x/ai-generated-tropical-fish-isolated-on-transparent-background-png.png"
+            alt="">ikan</button>
 
         <p id="feedback-tempat" class="feedback"></p>
 
@@ -576,7 +579,7 @@
 
         <p id="feedback-surai" class="feedback"></p>
         <div class="nav-btn">
-          <button class="prev-btn" >◀ kembali</button>
+          <button class="prev-btn">◀ kembali</button>
         </div>
       </section>
 
@@ -601,121 +604,121 @@
     </footer>
     <script>
 
-/* ================= NAVIGATION ================= */
-const navOnBtn = document.getElementById("nav-on");
-const navCloseBtn = document.getElementById("nav-close");
-const navMenu = document.getElementById("nav-menu");
+      /* ================= NAVIGATION ================= */
+      const navOnBtn = document.getElementById("nav-on");
+      const navCloseBtn = document.getElementById("nav-close");
+      const navMenu = document.getElementById("nav-menu");
 
-if (navOnBtn && navCloseBtn && navMenu) {
-  navOnBtn.addEventListener("click", () => {
-    navMenu.classList.remove("close");
-    navMenu.classList.add("open");
-  });
+      if (navOnBtn && navCloseBtn && navMenu) {
+        navOnBtn.addEventListener("click", () => {
+          navMenu.classList.remove("close");
+          navMenu.classList.add("open");
+        });
 
-  navCloseBtn.addEventListener("click", () => {
-    navMenu.classList.remove("open");
-    navMenu.classList.add("close");
-  });
-}
+        navCloseBtn.addEventListener("click", () => {
+          navMenu.classList.remove("open");
+          navMenu.classList.add("close");
+        });
+      }
 
-/* ================= SLIDE SYSTEM ================= */
-let currentStep = 0;
-const steps = document.querySelectorAll(".info-step");
+      /* ================= SLIDE SYSTEM ================= */
+      let currentStep = 0;
+      const steps = document.querySelectorAll(".info-step");
 
-function showStep(index) {
-  stopAllMedia();
-  steps.forEach(step => step.classList.remove("active"));
-  steps[index].classList.add("active");
-}
+      function showStep(index) {
+        stopAllMedia();
+        steps.forEach(step => step.classList.remove("active"));
+        steps[index].classList.add("active");
+      }
 
-document.addEventListener("click", function (e) {
+      document.addEventListener("click", function (e) {
 
-  if (e.target.classList.contains("next-btn")) {
-    if (currentStep < steps.length - 1) {
-      currentStep++;
-      showStep(currentStep);
-    }
-  }
+        if (e.target.classList.contains("next-btn")) {
+          if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep(currentStep);
+          }
+        }
 
-  if (e.target.classList.contains("prev-btn")) {
-    if (currentStep > 0) {
-      currentStep--;
-      showStep(currentStep);
-    }
-  }
-});
+        if (e.target.classList.contains("prev-btn")) {
+          if (currentStep > 0) {
+            currentStep--;
+            showStep(currentStep);
+          }
+        }
+      });
 
-/* ================= STOP ALL MEDIA ================= */
-function stopAllMedia() {
+      /* ================= STOP ALL MEDIA ================= */
+      function stopAllMedia() {
 
-  // Stop audio & video biasa
-  document.querySelectorAll("audio, video").forEach(media => {
-    media.pause();
-    media.currentTime = 0;
-  });
+        // Stop audio & video biasa
+        document.querySelectorAll("audio, video").forEach(media => {
+          media.pause();
+          media.currentTime = 0;
+        });
 
-  // Reset semua iframe (YouTube otomatis berhenti)
-  document.querySelectorAll("iframe").forEach(frame => {
-    const src = frame.src;
-    frame.src = src;
-  });
-}
+        // Reset semua iframe (YouTube otomatis berhenti)
+        document.querySelectorAll("iframe").forEach(frame => {
+          const src = frame.src;
+          frame.src = src;
+        });
+      }
 
-/* ================= AUDIO PLAY ================= */
-function playAudio(id) {
-  stopAllMedia();
-  const audio = document.getElementById(id);
-  if (audio) audio.play();
-}
+      /* ================= AUDIO PLAY ================= */
+      function playAudio(id) {
+        stopAllMedia();
+        const audio = document.getElementById(id);
+        if (audio) audio.play();
+      }
 
-/* ================= GO TO STEP ================= */
-function goToStepById(id) {
-  stopAllMedia();
+      /* ================= GO TO STEP ================= */
+      function goToStepById(id) {
+        stopAllMedia();
 
-  steps.forEach((step, index) => {
-    step.classList.remove("active");
+        steps.forEach((step, index) => {
+          step.classList.remove("active");
 
-    if (step.id === id) {
-      step.classList.add("active");
-      currentStep = index;
-    }
-  });
-}
+          if (step.id === id) {
+            step.classList.add("active");
+            currentStep = index;
+          }
+        });
+      }
 
-/* ================= SOAL SYSTEM ================= */
-let isLocked = false;
+      /* ================= SOAL SYSTEM ================= */
+      let isLocked = false;
 
-function jawaban(status) {
-  if (isLocked) return;
-  isLocked = true;
+      function jawaban(status) {
+        if (isLocked) return;
+        isLocked = true;
 
-  const step = document.querySelector(".info-step.active");
-  const feedback = step.querySelector(".feedback");
-  const suaraBenar = document.getElementById("suara-benar");
-  const suaraSalah = document.getElementById("suara-salah");
+        const step = document.querySelector(".info-step.active");
+        const feedback = step.querySelector(".feedback");
+        const suaraBenar = document.getElementById("suara-benar");
+        const suaraSalah = document.getElementById("suara-salah");
 
-  const buttons = step.querySelectorAll("button");
-  buttons.forEach(btn => btn.disabled = true);
+        const buttons = step.querySelectorAll("button");
+        buttons.forEach(btn => btn.disabled = true);
 
-  if (status === "benar") {
-    feedback.innerHTML = "✅ Hebat! Kamu benar!";
-    feedback.style.color = "green";
-    suaraBenar.play();
-    suaraBenar.onended = unlock;
-  } else {
-    feedback.innerHTML = "❌ Yuk coba lagi!";
-    feedback.style.color = "red";
-    suaraSalah.play();
-    suaraSalah.onended = unlock;
-  }
+        if (status === "benar") {
+          feedback.innerHTML = "✅ Hebat! Kamu benar!";
+          feedback.style.color = "green";
+          suaraBenar.play();
+          suaraBenar.onended = unlock;
+        } else {
+          feedback.innerHTML = "❌ Yuk coba lagi!";
+          feedback.style.color = "red";
+          suaraSalah.play();
+          suaraSalah.onended = unlock;
+        }
 
-  function unlock() {
-    buttons.forEach(btn => btn.disabled = false);
-    isLocked = false;
-  }
-}
+        function unlock() {
+          buttons.forEach(btn => btn.disabled = false);
+          isLocked = false;
+        }
+      }
 
-</script>
+    </script>
 </body>
 
 </html>
