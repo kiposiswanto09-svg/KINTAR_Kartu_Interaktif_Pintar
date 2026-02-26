@@ -460,7 +460,7 @@
           <a href="https://vt.tiktok.com/ZSmJxvFxE/" target="_blank">tiktok</a>
         </p>
         <div class="nav-btn">
-          <button class="prev-btn">◀ kembali</button>
+          <button onclick="stopVideo(); nextStep()" class="prev-btn">◀ kembali</button>
         </div>
       </section>
       <!-- Aktivitas -->
@@ -571,7 +571,7 @@
 
         <p id="feedback-surai" class="feedback"></p>
         <div class="nav-btn">
-          <button class="prev-btn">◀ kembali</button>
+          <button class="prev-btn" >◀ kembali</button>
         </div>
       </section>
 
@@ -595,117 +595,122 @@
       </div>
     </footer>
     <script>
-      /* ================= NAVIGATION ================= */
-      const navOnBtn = document.getElementById("nav-on");
-      const navCloseBtn = document.getElementById("nav-close");
-      const navMenu = document.getElementById("nav-menu");
 
-      navOnBtn.addEventListener("click", () => {
-        navMenu.classList.remove("close");
-        navMenu.classList.add("open");
-      });
+/* ================= NAVIGATION ================= */
+const navOnBtn = document.getElementById("nav-on");
+const navCloseBtn = document.getElementById("nav-close");
+const navMenu = document.getElementById("nav-menu");
 
-      navCloseBtn.addEventListener("click", () => {
-        navMenu.classList.remove("open");
-        navMenu.classList.add("close");
-      });
+if (navOnBtn && navCloseBtn && navMenu) {
+  navOnBtn.addEventListener("click", () => {
+    navMenu.classList.remove("close");
+    navMenu.classList.add("open");
+  });
 
-      /* ================= SLIDE SYSTEM ================= */
-      let currentStep = 0;
-      const steps = document.querySelectorAll(".info-step");
+  navCloseBtn.addEventListener("click", () => {
+    navMenu.classList.remove("open");
+    navMenu.classList.add("close");
+  });
+}
 
-      function showStep(index) {
-        stopAllMedia();
-        steps.forEach(step => step.classList.remove("active"));
-        steps[index].classList.add("active");
-      }
+/* ================= SLIDE SYSTEM ================= */
+let currentStep = 0;
+const steps = document.querySelectorAll(".info-step");
 
-      document.addEventListener("click", function (e) {
+function showStep(index) {
+  stopAllMedia();
+  steps.forEach(step => step.classList.remove("active"));
+  steps[index].classList.add("active");
+}
 
-        if (e.target.classList.contains("next-btn")) {
-          if (currentStep < steps.length - 1) {
-            currentStep++;
-            showStep(currentStep);
-          }
-        }
+document.addEventListener("click", function (e) {
 
-        if (e.target.classList.contains("prev-btn")) {
-          if (currentStep > 0) {
-            currentStep--;
-            showStep(currentStep);
-          }
-        }
-      });
+  if (e.target.classList.contains("next-btn")) {
+    if (currentStep < steps.length - 1) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  }
 
-      /* ================= STOP ALL MEDIA ================= */
-      function stopAllMedia() {
-        document.querySelectorAll("audio, video").forEach(media => {
-          media.pause();
-          media.currentTime = 0;
-        });
-      }
+  if (e.target.classList.contains("prev-btn")) {
+    if (currentStep > 0) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  }
+});
 
-      /* ================= AUDIO PLAY ================= */
-      function playAudio(id) {
-        stopAllMedia();
-        const audio = document.getElementById(id);
-        if (audio) audio.play();
-      }
+/* ================= STOP ALL MEDIA ================= */
+function stopAllMedia() {
 
-      /* ================= SOAL SYSTEM ================= */
-      let isLocked = false;
+  // Stop audio & video biasa
+  document.querySelectorAll("audio, video").forEach(media => {
+    media.pause();
+    media.currentTime = 0;
+  });
 
-      function jawaban(status) {
-        if (isLocked) return;
-        isLocked = true;
+  // Reset semua iframe (YouTube otomatis berhenti)
+  document.querySelectorAll("iframe").forEach(frame => {
+    const src = frame.src;
+    frame.src = src;
+  });
+}
 
-        const step = document.querySelector(".info-step.active");
-        const feedback = step.querySelector(".feedback");
-        const suaraBenar = document.getElementById("suara-benar");
-        const suaraSalah = document.getElementById("suara-salah");
+/* ================= AUDIO PLAY ================= */
+function playAudio(id) {
+  stopAllMedia();
+  const audio = document.getElementById(id);
+  if (audio) audio.play();
+}
 
-        const buttons = step.querySelectorAll("button");
-        buttons.forEach(btn => btn.disabled = true);
+/* ================= GO TO STEP ================= */
+function goToStepById(id) {
+  stopAllMedia();
 
-        if (status === "benar") {
-          feedback.innerHTML = "✅ Hebat! Kamu benar!";
-          feedback.style.color = "green";
-          suaraBenar.play();
-          suaraBenar.onended = unlock;
-        } else {
-          feedback.innerHTML = "❌ Yuk coba lagi!";
-          feedback.style.color = "red";
-          suaraSalah.play();
-          suaraSalah.onended = unlock;
-        }
+  steps.forEach((step, index) => {
+    step.classList.remove("active");
 
-        function unlock() {
-          buttons.forEach(btn => btn.disabled = false);
-          isLocked = false;
-        }
-      }
-      function goToStepById(id) {
-        stopAllMedia();
+    if (step.id === id) {
+      step.classList.add("active");
+      currentStep = index;
+    }
+  });
+}
 
-        const steps = document.querySelectorAll(".info-step");
+/* ================= SOAL SYSTEM ================= */
+let isLocked = false;
 
-        steps.forEach((step, index) => {
-          step.classList.remove("active");
+function jawaban(status) {
+  if (isLocked) return;
+  isLocked = true;
 
-          if (step.id === id) {
-            step.classList.add("active");
-            currentStep = index; // penting supaya next/prev tetap normal
-          }
-        });
-      }
-      function stopAllMedia() {
-        document.querySelectorAll("video, audio").forEach(media => {
-          media.pause();
-          media.currentTime = 0;
-        });
-      }
+  const step = document.querySelector(".info-step.active");
+  const feedback = step.querySelector(".feedback");
+  const suaraBenar = document.getElementById("suara-benar");
+  const suaraSalah = document.getElementById("suara-salah");
 
-    </script>
+  const buttons = step.querySelectorAll("button");
+  buttons.forEach(btn => btn.disabled = true);
+
+  if (status === "benar") {
+    feedback.innerHTML = "✅ Hebat! Kamu benar!";
+    feedback.style.color = "green";
+    suaraBenar.play();
+    suaraBenar.onended = unlock;
+  } else {
+    feedback.innerHTML = "❌ Yuk coba lagi!";
+    feedback.style.color = "red";
+    suaraSalah.play();
+    suaraSalah.onended = unlock;
+  }
+
+  function unlock() {
+    buttons.forEach(btn => btn.disabled = false);
+    isLocked = false;
+  }
+}
+
+</script>
 </body>
 
 </html>
