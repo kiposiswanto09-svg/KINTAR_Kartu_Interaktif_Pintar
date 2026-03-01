@@ -418,3 +418,45 @@ content {
         margin: auto;
     }
 }
+#materi {
+  background: linear-gradient(to bottom, #bde0fe, #a2d2ff);
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 20px;
+  min-height: 100vh;
+}
+
+#materi h2 {
+  color: #023e8a;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#materi button {
+  display: block;
+  width: 90%;
+  max-width: 320px;
+  margin: 12px auto;
+  padding: 14px;
+  font-size: 17px;
+  border: none;
+  border-radius: 18px;
+  background-color: #219ebc;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#materi button:hover {
+  background-color: #126782;
+  transform: scale(1.05);
+}
+
+.prev-btn {
+  background-color: #ffb703 !important;
+}
+
+.prev-btn:hover {
+  background-color: #fb8500 !important;
+}
