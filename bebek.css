@@ -418,7 +418,8 @@ content {
         margin: auto;
     }
 }
-#materi {
+#materi, #bagian, #menu-pertumbuhan 
+{
   background: linear-gradient(to bottom, #bde0fe, #a2d2ff);
   padding: 30px 20px;
   text-align: center;
@@ -426,13 +427,14 @@ content {
   min-height: 100vh;
 }
 
-#materi h2 {
+#materi h2, #bagian h2, #menu-pertumbuhan h2  {
   color: #023e8a;
   font-size: 28px;
   margin-bottom: 20px;
 }
 
-#materi button {
+#materi button, #bagian button, #menu-pertumbuhan button
+{
   display: block;
   width: 90%;
   max-width: 320px;
