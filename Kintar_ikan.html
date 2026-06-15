@@ -36,39 +36,35 @@
 <main class="content">
 
   <!-- Judul + Gambar + Suara -->
-  <section class="info-step active">
+ <section class="info-step active">
+        <h2 onclick="playAudio('audioJudul')" class="klik-audio">
+          ikan 🐠
+        </h2>
+        <audio id="audioJudul" src=""></audio>
+        <img src="Ikan Badut.jpeg" alt="bebek" width="50%"
+          onclick="playAudio('audioFoto')" class="klik-audio">
+        <audio id="audioFoto" src=""></audio>
+        <p class="source">
+          sumber gambar:
+          <a href="https://share.google/oMTDS4XogACDuu5nE" target="_blank">pinterst</a>
+        </p>
 
-    <h2 onclick="playAudio('audioJudul')" class="klik-audio">
-      Ikan 🐠
-    </h2>
-    <audio id="audioJudul" src="audio/ikan.mp3"></audio>
+        <h3 onclick="playAudio('suarabebek')" class="klik-audio">
+          suara ikan 🐠
+        </h3>
+        <audio id="suarabebek" src=""></audio>
 
-    <audio id="audioFoto" src="audio/ikan.mp3"></audio>
-
-    <img src="Ikan Badut.jpeg"
-     alt="Ikan Badut"
-     width="50%"
-     onclick="playAudio('audioFoto')"
-     class="klik-audio">
-
-    <h3 onclick="playAudio('suaraIkan')" class="klik-audio">
-      Suara Ikan 🐠
-    </h3>
-
-    <audio id="suaraIkan" src="audio/suara-ikan.mp3"></audio>
-
-    <audio controls>
-      <source src="audio/suara-ikan.mp3" type="audio/mpeg">
-      Browser Anda tidak mendukung audio.
-    </audio>
+        <audio controls>
+          <source src="" type="audio/mpeg">
+          Browser Anda tidak mendukung audio.
+        </audio>
 
         <p class="source">
           sumber audio:
-          <a href="" target="_blank">TikTok</a>
+          <a href="" target="_blank"></a>
         </p>
         <button class="next-btn">▶ lanjut</button>
       </section>
-
       <!-- ================= HALAMAN MENU ================= -->
       <section id="materi" class="info-step">
         <h2>materi ikan</h2>
