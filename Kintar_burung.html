@@ -37,49 +37,51 @@
       <!-- Judul + Gambar + Suara -->
       <section class="info-step active">
         <h2 onclick="playAudio('audioJudul')" class="klik-audio">
-          Burung 🐦
+          burung 🐦
         </h2>
         <audio id="audioJudul" src=""></audio>
-        <img src="https://www.shutterstock.com/image-photo/bluebird-bird-isolated-onwhite-background-600nw-2635270251.jpg" alt="burung" width="50%"
+        <img src="https://e7.pngegg.com/pngimages/445/928/png-clipart-sparrow-sparrow.png" 
+        alt="bebek" width="50%"
           onclick="playAudio('audioFoto')" class="klik-audio">
         <audio id="audioFoto" src=""></audio>
         <p class="source">
           sumber gambar:
-          <a href="https://www.shutterstock.com/image-photo/bluebird-bird-isolated-onwhite-background-600nw-2635270251.jpg" target="_blank">pngimg.com</a>
+          <a href="https://e7.pngegg.com/pngimages/445/928/png-clipart-sparrow-sparrow.png" 
+          target="_blank">pngimg.com</a>
         </p>
 
-        <h3 onclick="playAudio('suaraburung')" class="klik-audio">
+        <h3 onclick="playAudio('suarabebek')" class="klik-audio">
           suara burung 🐦
         </h3>
-        <audio id="suaraburung" src=""></audio>
+        <audio id="suarabebek" src=""></audio>
 
         <audio controls>
-          <source src="" type="audio/mpeg">
+          <source src="suara burung gereja.mp4" type="audio/mpeg">
           Browser Anda tidak mendukung audio.
         </audio>
 
         <p class="source">
           sumber audio:
-          <a href="" target="_blank"></a>
+          <a href="https://vt.tiktok.com/ZSQgnX1Wx/" target="_blank">TikTok</a>
         </p>
         <button class="next-btn">▶ lanjut</button>
       </section>
 
       <!-- ================= HALAMAN MENU ================= -->
       <section id="materi" class="info-step">
-        <h2>materi burung</h2>
+        <h2>materi bebek</h2>
 
-        <button onclick="goToStepById('tubuh')">bagian tubuh burung</button>
-        <button onclick="goToStepById('bergerak')">cara bergerak burung</button>
-        <button onclick="goToStepById('pertumbuhan')">pertumbuhan burung</button>
-        <button onclick="goToStepById('perkembang')">perkembangan burung</button>
-        <button onclick="goToStepById('makanan')">makanan burung</button>
-        <button onclick="goToStepById('soal')">pertanyaan burung</button>
+        <button onclick="goToStepById('tubuh')">bagian tubuh bebek</button>
+        <button onclick="goToStepById('bergerak')">cara bergerak bebek</button>
+        <button onclick="goToStepById('pertumbuhan')">pertumbuhan bebek</button>
+        <button onclick="goToStepById('perkembang')">perkembangan bebek</button>
+        <button onclick="goToStepById('makanan')">makanan bebek</button>
+        <button onclick="goToStepById('soal')">pertanyaan bebek</button>
         <button class="prev-btn">◀ kembali</button>
       </section>
       <!-- Bagian tubuh hewan -->
       <section id="tubuh" class="info-step menu-page">
-        <h3> bagian tubuh burung</h3>
+        <h3> bagian tubuh bebek</h3>
         <div class="ciri-ciri">
           <img src="Paruh Bebek.jpeg" alt="paruh bebek" 
           onclick="playAudio('audioParuhjpg')" class="klik-audio">
@@ -212,7 +214,7 @@
         </div>
       </section>
       <!--menu hewan bergerak-->
-      <section id="bergerakhewan" class="info-step menu-page active">
+      <section id="bergerakhewan" class="info-step menu-page">
         <button onclick="goToStepById('videoBerenang')">video bebek berenang</button>
         <button onclick="goToStepById('videoanimasi')">lagu bebek berenang</button>
         <button class="prev-btn">◀ kembali</button>
@@ -345,7 +347,8 @@
         <div class="ciri-ciri">
           <img
             src="https://png.pngtree.com/png-vector/20241023/ourmid/pngtree-rice-plant-illustration-for-farming-and-agriculture-png-image_14147833.png"
-            alt="padi">
+            alt="padi" onclick="playAudio('audioPadijpg')" class="teks-audio">
+            <audio id="audioPadijpg" src=""></audio>
           <span onclick="playAudio('audioPadi')" class="teks-audio">
             bebek makan padi
           </span>
@@ -354,7 +357,8 @@
 
         <div class="ciri-ciri">
           <img src="https://e7.pngegg.com/pngimages/117/966/png-clipart-worms-worms.png" 
-          alt="cacing">
+          alt="cacing" onclick="playAudio('audioCacingjpg')" class="teks-audio">
+          <audio id="audioCacingjpg" src=""></audio>
           <span onclick="playAudio('audioCacing')" class="teks-audio">
             bebek makan cacing
           </span>
@@ -364,7 +368,8 @@
         <div class="ciri-ciri">
           <img
             src="https://e7.pngegg.com/pngimages/884/625/png-clipart-macro-graphy-of-red-ladybird-beetle-ladybird-ladybug-insects-desktop-wallpaper.png"
-            alt="serangga kecil">
+            alt="serangga kecil" onclick="playAudio('audioSeranggajpg')" class="teks-audio">
+            <audio id="audioSeranggajpg" src=""></audio>
           <span onclick="playAudio('audioSerangga')" class="teks-audio">
             bebek makan serangga kecil
           </span>
@@ -579,7 +584,7 @@
       <div class="sosmed">
         <a href="https://facebook.com/taufik.hidayat.416718" target="_blank"><img
             src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
-        <a href="https://instagram.com/kiposis_official" target="_blank"><img
+        <a href="https://instagram.com/taufik._.hdyt" target="_blank"><img
             src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
         <a href="https://wa.me/082258038059" target="_blank"><img
             src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
